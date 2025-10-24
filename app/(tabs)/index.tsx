@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  StyleSheet,
-  Dimensions,
-  Animated,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Image, StyleSheet, Dimensions, Animated, } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
@@ -53,7 +43,7 @@ export default function HomeScreen() {
 
       <Text style={styles.categoriesTitle}>Categories</Text>
       <View style={styles.categoryRow}>
-        <TouchableOpacity style={styles.categoryButton} onPress={() => router.push("/(tabs)/package")}>
+        <TouchableOpacity style={styles.categoryButton} onPress={() => router.push("/(screens)/package")}>
           <MaterialCommunityIcons name="account-group" size={26} color="#4a0d0d" />
           <Text style={styles.categoryText}>Packages</Text>
         </TouchableOpacity>
@@ -68,7 +58,7 @@ export default function HomeScreen() {
           <Text style={styles.categoryText}>Schedule</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.categoryButton} onPress={() => router.push("/(tabs)/reservation/reservation")}>
+        <TouchableOpacity style={styles.categoryButton} onPress={() => router.push("/(screens)/reservation")}>
           <MaterialCommunityIcons name="text-box-check-outline" size={26} color="#4a0d0d" />
           <Text style={styles.categoryText}>Book Reservation</Text>
         </TouchableOpacity>

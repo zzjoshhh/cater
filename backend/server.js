@@ -5,15 +5,16 @@ import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import { v2 as cloudinary } from "cloudinary";
 import { connectToDB } from "./config/db.js";
- 
-dotenv.config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env"});
 
-    cloudinary.config({
-        cloud_name: process.env.CLOUD_NAME,
-        api_key: process.env.API_KEY,
-        api_secret: process.env.API_SECRET,
-    });
+dotenv.config({
+  path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
+});
 
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 const app = express();
 app.use(express.json());

@@ -2,14 +2,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text } from "react-native";
 
-export default function ForgotPasswordScreen() {
+export default function ScheduleScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="light"/>
-
+            
             <View style={styles.topBar}>
-                <Text style={styles.title}>Forgot Password</Text>
+                <Text style={styles.title}>Schedule</Text>
             </View>
         </SafeAreaView>
     )
@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     topBar: {
-        
+
     },
     title: {
 
-    },
+    }
 })

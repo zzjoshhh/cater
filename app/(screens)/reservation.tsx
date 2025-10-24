@@ -53,7 +53,7 @@ export default function ReservationScreen() {
               onChange={handleChange} minimumDate={new Date()} accentColor="#DA8D00" /> 
             )} 
             {/* Next Button */} 
-            <TouchableOpacity style={styles.nextButton} onPress={() => router.push("/reservation/occasion")} > 
+            <TouchableOpacity style={styles.nextButton} onPress={() => router.push("/occasion")} > 
               <Text style={styles.nextText}>Next</Text> 
               </TouchableOpacity> 
               </View> 

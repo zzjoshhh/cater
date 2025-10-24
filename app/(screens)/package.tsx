@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import packages from "../(tabs)/data/data1.json"; // JSON data
+import packages from "../data/data1.json"; // JSON data
 
 // Define the structure of a package item
 interface Package {

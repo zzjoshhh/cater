@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { View, Image } from "react-native";
-import { Tabs } from "expo-router";
+import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 
 SplashScreen.preventAutoHideAsync();
@@ -10,7 +10,6 @@ export default function RootLayout() {
 
   useEffect(() => {
     const load = async () => {
-      // Simulate loading time (e.g., fetching user/session data)
       await new Promise((resolve) => setTimeout(resolve, 3000));
       await SplashScreen.hideAsync();
       setReady(true);
@@ -18,17 +17,14 @@ export default function RootLayout() {
     load();
   }, []);
 
-  // 🔹 Show splash screen while loading
   if (!ready) {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#3B141C",
-        }}
-      >
+      <View style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#3B141C",
+      }}>
         <Image
           source={require("../assets/images/splash-iconic.png")}
           style={{
@@ -41,16 +37,14 @@ export default function RootLayout() {
     );
   }
 
-  // 🔹 When ready, render your main navigation
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false, // Hide headers globally
-        tabBarStyle: { display: "none" }, // Hide tab bar globally
-      }}
-    >
-      {/* If you still want stack-based navigation, use this instead: */}
-      {/* <Stack screenOptions={{ headerShown: false }} /> */}
-    </Tabs>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="onboarding" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(screens)/package" />
+      <Stack.Screen name="(screens)/occasion" />
+      <Stack.Screen name="(screens)/reservation" /> 
+    </Stack>
   );
 }
